@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from invista_me import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.investimentos, name='investiments'),
+    # path('contato/', views.get_contato, name='contato'),
+    # path('front/', views.front_end, name="Front"),
+    path('investimento_registrado/', views.investimento_registrado, name="investimento_registrado"),
+    path('<int:id_investimento>', views.detalhes, name='detalhe'),
+    path('cadastrarNovoInvestimento',views.cadastrar_novo, name='novo_cadastro'),
 ]

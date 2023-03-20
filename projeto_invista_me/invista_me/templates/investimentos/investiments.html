@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Página Inicial</title>
+    </head>
+    <body>
+        <header><h1>Listagem de Investimentos</h1></header>
+        <section>
+            <article>
+                <button><a href="{% url 'novo_cadastro' %}">Cadastre um novo investimento</a></button> 
+                <table>
+                    <tr>
+                        <td>Id</td>
+                        <td>Investimentos</td>
+                        <td>Valor</td>
+                    </tr>
+                    {% for dado in dados %}
+                    <tr>
+                        <td>{{dado.id}}</td>
+                        <td>{{dado.investimento}}</td>
+                        <td>{{dado.valor}}</td>
+                        <td><button><a href="{% url 'detalhe' dado.id %}">Detalhes</a></button></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </article>
+        </section>
+    </body>
+</html>
