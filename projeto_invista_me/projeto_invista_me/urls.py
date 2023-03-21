@@ -23,6 +23,8 @@ urlpatterns = [
     # path('contato/', views.get_contato, name='contato'),
     # path('front/', views.front_end, name="Front"),
     path('investimento_registrado/', views.investimento_registrado, name="investimento_registrado"),
+    path('novoinvestimento/<int:id_investimento>', views.editar, name='editar'),
     path('<int:id_investimento>', views.detalhes, name='detalhe'),
     path('cadastrarNovoInvestimento',views.cadastrar_novo, name='novo_cadastro'),
+    path('novoinvestimentoExcluir/<int:id_investimento>', views.excluir, name='excluir'),
 ]

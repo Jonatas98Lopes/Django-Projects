@@ -13,9 +13,9 @@
                 <button><a href="{% url 'novo_cadastro' %}">Cadastre um novo investimento</a></button> 
                 <table>
                     <tr>
-                        <td>Id</td>
-                        <td>Investimentos</td>
-                        <td>Valor</td>
+                        <th>Id</th>
+                        <th>Investimentos</th>
+                        <th>Valor</th>
                     </tr>
                     {% for dado in dados %}
                     <tr>
@@ -23,6 +23,8 @@
                         <td>{{dado.investimento}}</td>
                         <td>{{dado.valor}}</td>
                         <td><button><a href="{% url 'detalhe' dado.id %}">Detalhes</a></button></td>
+                        <td><button><a href="{% url 'editar'  dado.id %}">Editar</a></button></td>
+                        <td><button><a href="{% url 'excluir' dado.id %}">Excluir</a></button></td>
                     </tr>
                     {% endfor %}
                 </table>
