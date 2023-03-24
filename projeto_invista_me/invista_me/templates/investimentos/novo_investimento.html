@@ -1,5 +1,6 @@
 {% extends 'investimentos/base.html'%}
 {% block conteudo %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,12 +12,14 @@
 <body>
     <header><h1>Cadastre seu novo produto aqui!</h1></header>
     <section>
-        <forms method="POST">
-            {% csrf_token %}
-            <h3>Investimento</h3>
-            {{formulario}}
-            <button type="submit">Salvar</button>
-        </forms>
+        <h1>Investimento</h1>
+        <div class="container">
+            <forms method="POST">
+                {% csrf_token %}
+                {{formulario | crispy}}
+                <button type="submit" class="btn btn-success">Salvar</button>
+            </forms>
+        </div>
     </section>
 </body>
 </html>

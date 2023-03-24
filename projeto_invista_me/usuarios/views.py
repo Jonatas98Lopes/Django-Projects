@@ -1,0 +1,15 @@
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .forms import UserRegisterForm
+# Create your views here.
+def logIn(request):
+    if request.method == 'POST':
+        formulario = UserRegisterForm(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            usuario = formulario.cleaned_data.get('username')
+            messages.success(request, f'O usuário {usuario} foi criado com sucesso!')
+            return redirect('investiments')
+    else:
+        formulario = UserRegisterForm()
+    return render(request, 'cadastros/pagina_login.html', {'formulario': formulario})

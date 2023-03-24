@@ -9,26 +9,28 @@
         <title>Detalhes do Produto {{dados.id}}</title>
     </head>
     <body>
-        <header><h1>Detalhe de Investimento</h1></header>
+        <header><h1 style="text-align: center;">Detalhe de Investimento</h1></header>
         <section>
             <article>
                 <button><a href="{% url 'novo_cadastro' %}">Cadastre um novo investimento</a></button>
-                <table>
-                    <tr>
-                        <th>Id</th>
-                        <th>Investimento</th>
-                        <th>Valor</th>
-                        <th>Data</th>
-                        <th>Pago</th>
-                    </tr>
-                    <tr>
-                        <td>{{dados.id}}</td>
-                        <td>{{dados.investimento}}</td>
-                        <td>{{dados.valor}}</td>
-                        <td>{{dados.data}}</td>
-                        <td>{{dados.pago}}</td>
-                    </tr>
-                </table>
+                <div class="container">
+                    <table class="table table-hover table-bordered">
+                        <tr>
+                            <th>Id</th>
+                            <th>Investimento</th>
+                            <th>Valor</th>
+                            <th>Data</th>
+                            <th>Pago</th>
+                        </tr>
+                        <tr>
+                            <td>{{dados.id}}</td>
+                            <td>{{dados.investimento}}</td>
+                            <td>{{dados.valor}}</td>
+                            <td>{{dados.data}}</td>
+                            <td>{{dados.pago}}</td>
+                        </tr>
+                    </table>
+                </div>
             </article>
         </section>
     </body>
