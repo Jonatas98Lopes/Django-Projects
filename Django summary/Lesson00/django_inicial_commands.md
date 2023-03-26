@@ -18,6 +18,12 @@
 
 2. Type: **_pip3 install django_**.
 
+### You can make sure Django is installed by typing _Python_ in your terminal, click _Enter_. 
+
+### Now, you have started Python in terminal. Type _import django_ in the first line and click _Enter_. The last command: *django.get_version()*.
+
+### If it returns a number, it is working. Example: **'3.1.2'**
+
 ***
 
 ## Main Django commands:
@@ -37,7 +43,7 @@
 * **python manage.py runserver** => To see the alterations done in a local server. Copy the link and paste it in your browser.
 
 ***
-* **python manage.py runserver _(5000)_** => In case you have problems regarding an used gate, switch it like this.
+* **python manage.py runserver _5000_** => In case you have problems regarding an used gate, switch it like this.
 
 ***
 
@@ -61,14 +67,14 @@
 
 1. Go into the folder of the project. _-The folder created by this command: **django-admin startproject projectname.**_
 
-2. Being there, you have two options:
+1. Run the command: _**python manage.py runserver.**_
+   
+      * If this command presents any problem, it must be because an used gate. Run: _**python manage.py runserver 5000.**_ Choose any gate you want. It doesn't have to be _5000_.
+   
+1. Copy the _**http://...**_ link that has been generated.
+   
+1. Paste it on your browser. Here, you'll see every new alteration you do.
+   
+1. Close the link. Just type: **_ctrl + z_** - on Windows - to finalize it.
 
-   * Run the command: _**python manage.py runserver.**_
-   
-      * If this command presents any problem, it must be because an used gate. Run: _**python manage.py runserver (5000).**_ Choose any gate you want. It doesn't have to be _5000_.
-   
-   * Copy the _**http://...**_ link that has been generated.
-   
-   * Paste it on your browser. Here, you'll see every new alteration you do.
-   
-4. Close the link. Just type: **_ctrl + z_** - on Windows - to finalize it.
+### Obs: Upon you do it, you will find, in your project folder, file called _"db.sqlite3"_. This file will be useful for us to save our data later.

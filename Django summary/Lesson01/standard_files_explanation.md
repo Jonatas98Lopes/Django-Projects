@@ -28,7 +28,9 @@ Obs: This file we use to see the application work on our browse. The commands is
 
 * **_py_cache_** fie: This file stores temporary files that are generated when we run our application. No need to modify anything.
 
-* **__init__.py** file: Since we are working with module, the same rules to mudules apply here. In order that these current folder can be used in other places, we need this file.
+* **__init__.py** file: Since we are working with module, the same rules to mudules apply here. In order that these current folder can be used in other places, we need this file
+
+* **urls.py** file: It stores the paths for all the pages of a website.
 
 * **asgi.py** file can be used to set the deployment.
 ##### Deployment is the process to host the project online.
