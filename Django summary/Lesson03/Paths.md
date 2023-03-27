@@ -8,7 +8,7 @@ Through the file _urls.py_ located in the main folder of the project. As standar
 
 ## How do we create our initial page?
 
-* First, we need to import the _views.py_ file from the app we want to run that page. This file is responsible for returning an answer for the user when they request a page.
+* First, we need to import the _views.py_ file from the app we want to run that page. Import it into _urls.py_. This file is responsible for returning an answer for the user when they request a page.
    * If we just want to display a simple text when the user asks, we can go to that _views.py_ file and import the function _HttpResponse_ with the command: _from django.shortcuts import HttpResponse_.
 * Now that we have imported the function we need, we can create a function to render something on the screen when the user requests information. In Django, each function will be responsible for each page basically.
 

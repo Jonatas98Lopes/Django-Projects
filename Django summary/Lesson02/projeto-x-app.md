@@ -35,9 +35,7 @@ Depois de rodar o comando acima, você deve ser capaz de ver outra pasta no dire
 
 * Abra *NOMEDOPROJETO*. Você deve ter os seguintes arquivos:
    
-   * **migrations** folder: It deals with the database of the project.
    * Pasta **migrations**: Lida com o banco de dados do projeto.
-   * **__init__.py** file: It is necessary because call the app folder in others folders so that the principle of module is used here.
    * Arquivo **__init__.py**: Ele é necessário porque chama a pasta do app em outras pastas para que o princípio de módulo seja usado aqui.
    * Arquivo **admin.py** :  ----
    * Arquivo **apps.py**: Aqui, nós definimos quais outras aplicações serão relacionadas a ele.

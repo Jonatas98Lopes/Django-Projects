@@ -8,7 +8,7 @@ Através do arquivo _urls.py_ localizado na pasta principal do projeto. Por padr
 
 ## Como nós criamos nossa página inicial?
 
-* Primeiro, nós precisamos importar o arquivo _views.py_ do app que queremos rodar nessa página. O arquivo é responsável por devolver uma resposta para o usuário quando ele requesitar uma página.
+* Primeiro, nós precisamos importar o arquivo _views.py_ do app que queremos rodar nessa página. Importá-lo dentro de _urls.py_. O arquivo é responsável por devolver uma resposta para o usuário quando ele requesitar uma página.
    * Se nós apenas quisermos exibir um texto simples quando o usuário pedir, nós podemos ir para aquele arquivo  _views.py_ e importar a função  _HttpResponse_ com o comando: _from django.shortcuts import HttpResponse_.
 * Agora que nós importamos a função que precisamos, nós podemos criar uma função para renderizar algo na tela quando o usuário requesitar informação. No Django, cada função será responsável por cada página basicamente.
 
@@ -19,7 +19,7 @@ def pagina_inicial(request):
 ```
 ##### Obs: Request é uma varíavel de boa prática. Ela recebe todos os dados de entrada.
 
-* Agora, nós precisamos informar o arquivo _urls.py_ que nós temos uma função para renderizar uma mensagem e criar uma caminho de extensão para acessá-la. Uma vez que é a nossa página inicial. nós não precisamos adicionar nada no caminho e não deixe espaços.
+* Agora, nós precisamos informar o arquivo _urls.py_ que nós temos uma função para renderizar uma mensagem e criar uma caminho de extensão para acessá-la. Uma vez que é a nossa página inicial, nós não precisamos adicionar nada no caminho e, não deixe espaços.
 
 _Exemplo_:
 
@@ -45,5 +45,6 @@ def contato(request):
 ```
 path('contato', views.contato, name='contato')
 ```
+
 #### Obs: A propriedade _name_ será útil mais tarde. 
 
