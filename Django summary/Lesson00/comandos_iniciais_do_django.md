@@ -61,7 +61,7 @@
 
 1. Entre na pasta do projeto. _- A pasta criada com este comando: **django-admin startproject nomedoprojeto.**_
 
-2. Estando lá, você tem duas opções:
+2. Estando lá:
 
    * Execute o comando: _**python manage.py runserver.**_
    
