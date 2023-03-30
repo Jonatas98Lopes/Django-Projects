@@ -71,6 +71,6 @@
    
    * Cole-o no seu navegador. Aqui, você verá toda nova alteração que você fizer.
    
-4. Feche o link. Apenas digite: **_ctrl + z_** - no Windows - para finalizá-lo.
+4. Feche o link. Apenas digite: **_ctrl + c_** - no Windows - para finalizá-lo.
    
 

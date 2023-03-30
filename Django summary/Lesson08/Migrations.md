@@ -19,7 +19,7 @@ You can open the software now, find the _db.sqlite3_ file through it. Open it an
 
 ### How to transfer the model created in _models.py_ to the _db.sqlite3_?
 
-1. Close your application if it is opened. You can type _ctrl + z_, on Windows, in your terminal.
+1. Close your application if it is opened. You can type _ctrl + c_, on Windows, in your terminal.
 
 1. Make sure you are the main folder of the project. The folder that contains the _manage.py_ file.
 

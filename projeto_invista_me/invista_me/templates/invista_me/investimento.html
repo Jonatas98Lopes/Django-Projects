@@ -1,0 +1,15 @@
+<h1>Listagem de Investimentos</h1>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Investimento</th>
+        <th>Valor</th>
+    </tr>
+    {% for value in data %}
+        <tr>
+            <td>{{value.id}}</td>
+            <td>{{value.investimento}}</td>
+            <td>{{value.valor}}</td>
+        </tr>
+    {% endfor %}
+</table>
