@@ -5,4 +5,4 @@ class Investimentos(models.Model):
     investimento = models.TextField(max_length=255)
     valor = models.FloatField()
     pago = models.BooleanField(default=False)
-    data = models.DateField(datetime.now)
+    data = models.DateField(default=datetime.now)
