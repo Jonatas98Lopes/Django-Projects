@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.shortcuts import HttpResponse
 from .models import Investimentos
 from .forms import InvestimentoForm
@@ -38,8 +38,39 @@ def detalhe(request, id_investimento):
     return render(request,'invista_me/detalhe.html',dados)
 
 def criar(request):
-    investimento_form = InvestimentoForm()
-    formulario = {
-        'formulario': investimento_form
-    }
-    return render(request, 'invista_me/novo_investimento.html', context=formulario) 
+    if request.method == 'POST':
+        investimento_form = InvestimentoForm(request.POST)
+        if investimento_form.is_valid():
+            investimento_form.save()
+        return redirect('investimentos')
+    else:
+        investimento_form = InvestimentoForm()
+        formulario = {
+            'formulario': investimento_form
+        }
+        return render(request, 'invista_me/novo_investimento.html', context=formulario) 
+
+
+def editar(request, id_investimento):
+    investimento = Investimentos.objects.get(pk=id_investimento)
+    if request.method == 'GET':
+       formulario = InvestimentoForm(instance=investimento)
+       form = {
+           'formulario': formulario
+       }
+       return render(request, 'invista_me/novo_investimento.html', form)
+    else:
+        formulario = InvestimentoForm(request.POST, instance=investimento)
+        if formulario.is_valid():
+            formulario.save()   
+        return redirect('investimentos')
+
+def excluir(request, id_investimento):
+    if request.method == 'GET':
+        pass
+    else:
+        pass
+            
+      
+          
+        

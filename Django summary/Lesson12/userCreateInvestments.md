@@ -117,3 +117,31 @@ Edit *novo_investimento.html*, like:
     <button type="submit">Salvar</button>
 </form>
 ```
+***
+
+Putting the name _formulario_ here.
+
+It is time to make the code save tha data for us. 
+If it is POST, we get the information, add in our form, check if the information in it is correctly filled, and save the data. We can also _redirect_ function the person to new page which is very common when we store user's data. Redirect makes use of the _name_ attribute in _urls.py_.
+
+The result should be like this:
+```
+from django.shortcuts import render, redirect
+
+def criar(request):
+    if request.method == 'POST':
+        investimento_form = InvestimentoForm(request.POST)
+        if investimento_form.is_valid():
+            investimento_form.save()
+        return render('investimentos')
+    else:
+        investimento_form = InvestimentoForm()
+        formulario = {
+        'formulario': investimento_form 
+        }
+        return render(request, 'invista_me/novo_investimento.html', context=formulario)    
+```
+Request are actions made by the user regard an website.
+
+Request.method.GET is when a user accesses a page or click an link.
+Request.method.POST is ONLY when the user send information through the page.
