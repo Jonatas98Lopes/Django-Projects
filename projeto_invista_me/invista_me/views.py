@@ -66,10 +66,11 @@ def editar(request, id_investimento):
         return redirect('investimentos')
 
 def excluir(request, id_investimento):
-    if request.method == 'GET':
-        pass
-    else:
-        pass
+    investimento = Investimentos.objects.get(pk=id_investimento)
+    if request.method == 'POST':
+        investimento.delete()
+        return redirect('investimentos')
+    return render(request, 'invista_me/confirmar_exclusao.html', {'item': investimento})
             
       
           

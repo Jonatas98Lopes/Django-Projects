@@ -1,22 +1,27 @@
-<h1>Listagem de Investimentos</h1>
-<button><a href="{% url 'novo_investimento' %}">Novo Investimento</a></button>
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Investimento</th>
-        <th>Valor</th>
-    </tr>
-    {% for value in data %}
+{% extends 'invista_me/base.html' %}
+{% block conteudo %}
+<h1 style="text-align: center;">Listagem de Investimentos</h1>
+<div class="container">
+    <button  class="btn btn-success" style="margin-bottom: 30px;"><a style="color: white;" href="{% url 'novo_investimento' %}">Novo Investimento</a></button>
+    <table class="table table-striped table-bordered">
         <tr>
-            <td>{{value.id}}</td>
-            <td>{{value.investimento}}</td>
-            <td>{{value.valor}}</td>
-            <td><button><a href="{% url 'detalhe' value.id %}">Detalhes</a></button></td>
-            <td><button><a href="{% url 'editar' value.id %}">Editar</a></button></td>
-            <td><button><a href="{% url 'excluir' value.id %}">Excluir</a></button></td>
+            <th>Id</th>
+            <th>Investimento</th>
+            <th>Valor</th>
         </tr>
-    {% endfor %}
-</table>
+        {% for value in data %}
+            <tr>
+                <td>{{value.id}}</td>
+                <td>{{value.investimento}}</td>
+                <td>{{value.valor}}</td>
+                <td><button class="btn btn-info"><a style="color:white;" href="{% url 'detalhe' value.id %}">Detalhes</a></button></td>
+                <td><button class="btn btn-warning"><a style="color:white;" href="{% url 'editar' value.id %}">Editar</a></button></td>
+                <td><button class="btn btn-danger"><a style="color:white;" href="{% url 'excluir' value.id %}">Excluir</a></button></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock%}
 
    
         

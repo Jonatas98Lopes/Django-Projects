@@ -26,4 +26,5 @@ urlpatterns = [
     path('investimento_registrado/', views.investimento_registrado, name='investimento_registrado'),
     path('<int:id_investimento>/',views.detalhe, name='detalhe'),
     path('novo_investimento/<int:id_investimento>/', views.editar, name='editar'),
+    path('confirmarExclusao/<int:id_investimento>/', views.excluir, name='excluir'),
 ]
