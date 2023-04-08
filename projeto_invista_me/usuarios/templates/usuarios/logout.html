@@ -1,0 +1,12 @@
+{% extends 'invista_me/base.html' %}
+{% load crispy_forms_tags %}
+{% block conteudo %}
+<div class="container">
+    <h1>Você saiu da página!</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <a href="{% url 'login' %}">Acessar a conta novamente?</a>
+    </form>
+
+</div>
+{% endblock %}

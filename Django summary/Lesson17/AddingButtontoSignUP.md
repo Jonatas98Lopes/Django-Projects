@@ -180,6 +180,7 @@ There is a property in Django to use if the user is logged in. It is: **user.is_
 Add in _base.html_, like: Add it below _ul_ tag.
 
 ```
+<ul>
 {% if user.is_authenticated%}
     <li style="float: left">
         <a class="nav-item nav-link" href="{% url 'logout'%}">Sair</a>
@@ -192,6 +193,7 @@ Add in _base.html_, like: Add it below _ul_ tag.
         <a class="nav-item nav-link" href="{% url 'novo_usuario'%}">Fazer Cadastro</a>
     </li>
 {% endif%}
+</ul>
 ```
 Add new line to display the name of the user. Add the following code right after the if condition, code is:
 
