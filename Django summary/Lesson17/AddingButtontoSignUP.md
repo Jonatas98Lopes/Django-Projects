@@ -8,6 +8,7 @@ We are going to create  buttons to logIn and logout. How?
 
 * Below _a_ tag, add the following code:
 ```
+<nav>
 <ul style="list-style: none;">
     <li style="float: left">
         <a href="#" class="nav-item nav-link">LogIn</a>
@@ -16,6 +17,7 @@ We are going to create  buttons to logIn and logout. How?
         <a href="{% url 'novo_usuario' %}" class="nav-item nav-link">Fazer Cadastro</a>
     </li>
 </ul>
+</nav>
 ```
 
 The second _li_ tag carries the link to the page of signing up;

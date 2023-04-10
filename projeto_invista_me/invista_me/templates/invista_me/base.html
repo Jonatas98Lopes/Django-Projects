@@ -16,12 +16,11 @@
       <a class="navbar-brand" href="{% url 'investimentos'%}">Invista_Me!</a>
       <ul style="list-style: none;">
         {% if user.is_authenticated %}
-      
-        <li style="float: right">
-          <strong class="nav-item nav-link">Bem-vindo {{user.get_username}}</strong>
-        </li>
         <li style="float: left">
             <a href="{% url 'logout' %}" class="nav-item nav-link">Logout</a>
+        </li>
+        <li style="float: right">
+          <strong class="nav-item nav-link">Bem-vindo {{user.get_username}}</strong>
         </li>
       {% else %}
           <li style="float: left">

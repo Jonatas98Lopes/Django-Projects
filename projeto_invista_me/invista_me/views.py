@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.shortcuts import HttpResponse
 from .models import Investimentos
 from .forms import InvestimentoForm
+from django.contrib.auth.decorators import login_required
 def pagina_inicial(request):
     return HttpResponse('Pronto para investir!')
 
@@ -37,6 +38,7 @@ def detalhe(request, id_investimento):
     }
     return render(request,'invista_me/detalhe.html',dados)
 
+@login_required
 def criar(request):
     if request.method == 'POST':
         investimento_form = InvestimentoForm(request.POST)
@@ -51,6 +53,7 @@ def criar(request):
         return render(request, 'invista_me/novo_investimento.html', context=formulario) 
 
 
+@login_required
 def editar(request, id_investimento):
     investimento = Investimentos.objects.get(pk=id_investimento)
     if request.method == 'GET':
@@ -65,6 +68,7 @@ def editar(request, id_investimento):
             formulario.save()   
         return redirect('investimentos')
 
+@login_required
 def excluir(request, id_investimento):
     investimento = Investimentos.objects.get(pk=id_investimento)
     if request.method == 'POST':
